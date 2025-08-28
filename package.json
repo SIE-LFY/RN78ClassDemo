@@ -4,10 +4,19 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "lint": "eslint .",
+    "ios": "react-native run-ios --simulator='iPhone 15 Pro'",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint .",
+    "eslint:fix": "eslint --ext .tsx, --fix src/",
+    "pod": "cd ios && pod deintegrate && pod install",
+    "pod-install": "cd ios && pod install",
+    "setup-ios-permissions": "cd ios && react-native setup-ios-permissions && pod-install",
+    "build-svg": "node ./src/assets/getSvg",
+    "clean-android": "cd android && ./gradlew clean && cd ..",
+    "bundle-js": "react-native bundle --platform android --dev false --entry-file index.js  --bundle-output android/app/src/main/assets/index.android.bundle  --assets-dest android/app/src/main/res/",
+    "build-android": "cd android && ./gradlew clean && ./gradlew assembleRelease && cd ..",
+    "start-reset": "react-native start --reset-cache"
   },
   "dependencies": {
     "react": "19.0.0",
