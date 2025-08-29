@@ -19,13 +19,12 @@ import {
 import {
   Colors,
   DebugInstructions,
-  Header,
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { Button, ThemeProvider } from 'react-native-elements';
+import { Button, ThemeProvider,Header } from 'react-native-elements';
 
 // type SectionProps = PropsWithChildren<{
 //   title: string;
@@ -139,7 +138,11 @@ export default class App extends Component<Props> {
         return (
             <SafeAreaProvider>
                 <ThemeProvider>
-                    <Button style={{margin: 100}} title="Hey!" />
+                    <Header
+                        leftComponent={{ icon: 'menu', color: '#fff', iconStyle: { color: '#fff' } }}
+                        centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
+                        rightComponent={{ icon: 'home', color: '#fff' }}
+                    />
                 </ThemeProvider>
             </SafeAreaProvider>
         )
