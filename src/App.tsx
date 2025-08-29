@@ -25,6 +25,7 @@ import {
 
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Button, ThemeProvider,Header } from 'react-native-elements';
+import SvgIcon from './common/SvgIcon';
 
 // type SectionProps = PropsWithChildren<{
 //   title: string;
@@ -143,6 +144,9 @@ export default class App extends Component<Props> {
                         centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
                         rightComponent={{ icon: 'home', color: '#fff' }}
                     />
+                    <Text>999sdahfjf</Text>
+                    <SvgIcon name="expressDelivery" size={30} color="#1890ff" />
+                    <Text>999sdahfjf</Text>
                 </ThemeProvider>
             </SafeAreaProvider>
         )
